@@ -6,7 +6,6 @@
 
 int sieve(int n){
 
-  int size;
   if (n < 1000) {
     size = n * log(n) * 1.3 + 10;
   }
@@ -14,17 +13,17 @@ int sieve(int n){
     size = n* log(n) * 1.5;
   }
 
-  array = calloc(size, sizeof(int));
+  array = calloc(size, sizeof(char));
 
   int x = 2;
   int num = 1;
-  // printf("x= %d\n", x);
+  //printf("x= %d\n", x);
   // printf("num= %d\n", num);
-  for (;x < size; x += 2){
+  for (x = x+2 ;x < size; x += 2){
     // printf("cur =%d\n", x);
     array[x]++;
   }
-  x = 3;
+  x=3;
   while (x < size && num < n) {
     if (!array[x]){
       // printf("x= %d\n", x);
@@ -39,6 +38,10 @@ int sieve(int n){
     }
     x += 2;
   }
+  // for (int n = 0; n < size; n++) {
+  //   printf("%d - |%d|\n", n, array[n]);
+  // }
+
   return x-2;
 
 }

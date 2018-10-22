@@ -1,7 +1,8 @@
 #ifndef SIEVE_H
 #define SIEVE_H
 
-int * array;
+int size;
+char * array;
 int sieve(int);
 
 #endif
